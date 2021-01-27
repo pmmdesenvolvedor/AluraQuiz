@@ -1,30 +1,17 @@
 import styled from 'styled-components'
 import settings from '../settings.json';
+import QuizBackground from '../src/components/QuizBackground';
+import QuizContainer from '../src/components/QuizContainer';
+import QuizLogo from '../src/components/QuizLogo';
 import Widget from '../src/components/Widget';
-
-const BackgroundImage = styled.div`
-  flex: 1;
-  background-image: url(${settings.bg});
-  background-size: cover;
-  background-position: center;
-`;
-
-const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
-
+import Footer from '../src/components/Footer';
+import GitHubCorner from '../src/components/GitHubCorner';
 
 export default function Home() {
   return (
-    <BackgroundImage>
+    <QuizBackground backgroundImage={settings.bg}>
       <QuizContainer>
+        <QuizLogo />
         <Widget>
           <Widget.Header>
             <h1>The legend of Zelda</h1>
@@ -39,7 +26,9 @@ export default function Home() {
             <p>lorem ipsum dolor sit amet..</p>
           </Widget.Content>
         </Widget>
+        <Footer />
       </QuizContainer>
-    </BackgroundImage>
+      <GitHubCorner projectUrl="https://github.com/pmmdesenvolvedor/AluraQuiz" />
+    </QuizBackground>
   )
 }
