@@ -1,28 +1,110 @@
 {
-  "bg": "https://i2.wp.com/css-tricks.com/wp-content/uploads/2017/06/css-is-awesome-scaled.jpg?resize=1536%2C1208&ssl=1",
-  "title": "Quiz CSS da Alura",
-  "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+  "bg": "https://images3.alphacoders.com/189/189859.jpg",
+  "title": "O INCRÍVEL XADREZ",
+  "description": "Vamos descobrir agora qual o teu nível de conhecimento sobre Xadrez. Topa?",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
-      "description": "Essa é pra aquecer",
+      "image": null,
+      "title": "Como é a movimentação do cavalo?",
+      "description": null,
       "answer": 2,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "Todas as direções",
+        "Na diagonal",
+        "Na horizontal e vertical",
+        "Em \"L\"",
+        "Só para frente"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
+      "image": null,
+      "title": "No jogo de xadrez, cada peça tem seu valor padrão. Qual é o valor do Bispo?",
+      "description": null,
       "answer": 0,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+         "1",
+         "5",
+         "10",
+         "3",
+         "3,1"
+      ]
+    },
+    {
+      "image": null,
+      "title": "Em que século surgiu o jogo de xadrez?",
+      "description": null,
+      "answer": 0,
+      "alternatives": [
+         "Século V",
+         "Século VI",
+         "Século XV",
+         "Século XVI",
+         "Século XIV"
+      ]
+    },
+    {
+      "image": null,
+      "title": "Qual destas alternativas apresenta uma situação de empate?",
+      "description": null,
+      "answer": 0,
+      "alternatives": [
+         "Ficar somente os dois Reis, pretos e brancos, no jogo",
+         "As duas Torres, pretas e brancas, serem capturadas",
+         "Não haver nenhum Peão no jogo",
+         "Não existir nenhum Bispo, preto ou branco",
+         "Não sobrar nenhum cavalo no jogo"
+      ]
+    },
+    {
+      "image": null,
+      "title": "Qual o objetivo do jogo de xadrez?",
+      "description": null,
+      "answer": 0,
+      "alternatives": [
+         "Capturar a Dama do adversário",
+         "Deixar o Rei do adversário sem movimentos e em xeque",
+         "Empatar o jogo",
+         "Não sobrar nenhuma peça no jogo",
+         "Capturar o Bispo do adversário"
+      ]
+    },
+    {
+      "image": null,
+      "title": "Quando o Rei do adversário não está em xeque, porém ele está sem movimentos, dizemos que houve um empate por ___.",
+      "description": null,
+      "answer": 0,
+      "alternatives": [
+         "Abdução",
+         "Pressão",
+         "Afogamento",
+         "Sufocamento",
+         "Terrorismo"
+      ]
+    },
+    {
+      "image": null,
+      "title": "Quantas casas existe no tabuleiro de xadrez?",
+      "description": null,
+      "answer": 0,
+      "alternatives": [
+         "32",
+         "16",
+         "64",
+         "80",
+         "8"
+      ]
+    },
+    {
+      "image": null,
+      "title": "O que acontece quando um peão atravessa o tabuleiro até a ultima casa de sua coluna?",
+      "description": null,
+      "answer": 0,
+      "alternatives": [
+         "Ele se torna automaticamente uma dama.",
+         "Ele resgata uma peça capturada.",
+         "Ele é promovido à uma peça maior.",
+         "Ele é trocado por uma peça qualquer no tabuleiro.",
+         "Ele se sacrifica para comer uma peça que o jogador escolhe."
       ]
     }
   ],
@@ -31,9 +113,9 @@
   ],
   "theme": {
     "colors": {
-      "primary": "#0d47a1",
-      "secondary": "#29b6f6",
-      "mainBg": "#171B35",
+      "primary": "#BF5E0A",
+      "secondary": "#8C3604",
+      "mainBg": "#0D0D0D",
       "contrastText": "#FFFFFF",
       "wrong": "#FF5722",
       "success": "#4CAF50"
