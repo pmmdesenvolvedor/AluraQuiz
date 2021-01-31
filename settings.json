@@ -7,7 +7,7 @@
       "image": null,
       "title": "Como é a movimentação do cavalo?",
       "description": null,
-      "answer": 2,
+      "answer": 3,
       "alternatives": [
         "Todas as direções",
         "Na diagonal",
@@ -20,7 +20,7 @@
       "image": null,
       "title": "No jogo de xadrez, cada peça tem seu valor padrão. Qual é o valor do Bispo?",
       "description": null,
-      "answer": 0,
+      "answer": 3,
       "alternatives": [
          "1",
          "5",
@@ -33,7 +33,7 @@
       "image": null,
       "title": "Em que século surgiu o jogo de xadrez?",
       "description": null,
-      "answer": 0,
+      "answer": 2,
       "alternatives": [
          "Século V",
          "Século VI",
@@ -59,7 +59,7 @@
       "image": null,
       "title": "Qual o objetivo do jogo de xadrez?",
       "description": null,
-      "answer": 0,
+      "answer": 1,
       "alternatives": [
          "Capturar a Dama do adversário",
          "Deixar o Rei do adversário sem movimentos e em xeque",
@@ -72,7 +72,7 @@
       "image": null,
       "title": "Quando o Rei do adversário não está em xeque, porém ele está sem movimentos, dizemos que houve um empate por ___.",
       "description": null,
-      "answer": 0,
+      "answer": 2,
       "alternatives": [
          "Abdução",
          "Pressão",
@@ -85,7 +85,7 @@
       "image": null,
       "title": "Quantas casas existe no tabuleiro de xadrez?",
       "description": null,
-      "answer": 0,
+      "answer": 2,
       "alternatives": [
          "32",
          "16",
@@ -98,13 +98,13 @@
       "image": null,
       "title": "O que acontece quando um peão atravessa o tabuleiro até a ultima casa de sua coluna?",
       "description": null,
-      "answer": 0,
+      "answer": 4,
       "alternatives": [
          "Ele se torna automaticamente uma dama.",
          "Ele resgata uma peça capturada.",
-         "Ele é promovido à uma peça maior.",
          "Ele é trocado por uma peça qualquer no tabuleiro.",
-         "Ele se sacrifica para comer uma peça que o jogador escolhe."
+         "Ele se sacrifica para comer uma peça que o jogador escolhe.",
+         "Ele é promovido à uma peça maior."
       ]
     }
   ],

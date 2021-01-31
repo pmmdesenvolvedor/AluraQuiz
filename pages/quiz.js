@@ -27,8 +27,7 @@ const QuizPage = props => {
   };
   const [screenState, setScreenState] = useState(screenStates.LOADING);
 
-  const onSubmitHandler = e => {
-    e.preventDefault();
+  const onSubmitHandler = _ => {
     if ((currentQuestion + 1) < totalQuestions) {
       setCurrentQuestion(questionIndex + 1);
     } else {

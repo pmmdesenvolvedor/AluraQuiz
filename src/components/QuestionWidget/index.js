@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import settings from '../../../settings.json';
 
 import Widget from '../Widget';
 import Button from '../Form/Button';
@@ -23,10 +24,33 @@ const Answer = styled.div`
   }
 `;
 
+const Result = styled.div`
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  border-radius: ${({ theme }) => theme.borderRadius};
+`;
+
+const isCorrectClass = settings.theme.colors.success;
+const isWrongClass = settings.theme.colors.wrong;
+
 const QuestionWidget = ({question, questionIndex, totalQuestions, onSubmit}) => {
-  const [selectedAnswer, setSelectedAnswer] = React.useState(null);
-  const selectAnswer = e => {
-    setSelectedAnswer(e.target.value);
+  const [selectedAnswer, setSelectedAnswer] = React.useState(undefined);
+  const [isAnswered, setIsAnswered] = React.useState(false)
+  const hasSelectedAnswer = selectedAnswer !== undefined;
+  const isCorrect = selectedAnswer === question.answer;
+  const isWrong =  selectedAnswer && selectedAnswer !== question.answer;
+
+  const onSubmitHandler = e => {
+    e.preventDefault();
+    setIsAnswered(true);
+    setTimeout(() => {
+      onSubmit(e);
+      setIsAnswered(false);
+      setSelectedAnswer(undefined);
+    }, 3 * 1000);
   }
 
   return (
@@ -36,7 +60,7 @@ const QuestionWidget = ({question, questionIndex, totalQuestions, onSubmit}) => 
         <p>{ question.title }</p>
       </Widget.Header>
       <Widget.Content>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmitHandler}>
           { question.description !== null && <p>Dica: { question.description }</p> }
           {
             question.alternatives.map((answer, index) => {
@@ -47,8 +71,9 @@ const QuestionWidget = ({question, questionIndex, totalQuestions, onSubmit}) => 
                     type="radio"
                     name="answers"
                     id={answerId}
-                    value={answer}
-                    onClick={selectAnswer}
+                    checked={(selectedAnswer === index)}
+                    onChange={() => setSelectedAnswer(index)}
+                    disabled={isAnswered}
                   />
                   <label htmlFor={answerId}>{answer}</label>
                 </Answer>
@@ -56,7 +81,17 @@ const QuestionWidget = ({question, questionIndex, totalQuestions, onSubmit}) => 
             })
           }
           <br />
-          <Button type="submit" >
+          <Result
+            style={{
+              display: isAnswered ? 'block' : 'none',
+              backgroundColor: isCorrect ? isCorrectClass : isWrong ? isWrongClass : null
+            }}
+          >
+            Resposta   
+            { isCorrect ? ' correta' : null }
+            { isWrong ? ' incorreta' : null }
+          </Result>
+          <Button type="submit" disabled={!hasSelectedAnswer || isAnswered}>
             { ((questionIndex + 1) === totalQuestions) ? 'Finalizar' : 'Responder' }
           </Button>
         </form>
