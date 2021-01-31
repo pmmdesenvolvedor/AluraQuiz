@@ -36,7 +36,7 @@ const Result = styled.div`
 const isCorrectClass = settings.theme.colors.success;
 const isWrongClass = settings.theme.colors.wrong;
 
-const QuestionWidget = ({question, questionIndex, totalQuestions, onSubmit}) => {
+const QuestionWidget = ({question, questionIndex, totalQuestions, onSubmit, addResult}) => {
   const [selectedAnswer, setSelectedAnswer] = React.useState(undefined);
   const [isAnswered, setIsAnswered] = React.useState(false)
   const hasSelectedAnswer = selectedAnswer !== undefined;
@@ -46,7 +46,9 @@ const QuestionWidget = ({question, questionIndex, totalQuestions, onSubmit}) => 
   const onSubmitHandler = e => {
     e.preventDefault();
     setIsAnswered(true);
+
     setTimeout(() => {
+      addResult(isCorrect);
       onSubmit(e);
       setIsAnswered(false);
       setSelectedAnswer(undefined);

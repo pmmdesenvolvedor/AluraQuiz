@@ -2,6 +2,7 @@ import React from 'react';
 import Head from'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import styled from 'styled-components';
 import settings from '../settings.json';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/QuizContainer';
@@ -20,6 +21,23 @@ export default function Home() {
     router.push(`/quiz?name=${name}`);
   }
   const isDisabled = () => name.length === 0;
+
+  const QuizItem = styled.a`
+    display: flex;
+    margin-bottom: 4px;
+    padding: 4px 10px 6px 10px;
+    background-color: #232323;
+    border-radius: 4px;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.secondary};
+    }
+  `;
+  
   return (
     <QuizBackground backgroundImage={settings.bg}>
       <Head>
@@ -50,8 +68,18 @@ export default function Home() {
         </Widget>
         <Widget>
           <Widget.Content>
-            <h1>The quizes of galera</h1>
-            <p>lorem ipsum dolor sit amet..</p>
+            <h1>Quizes da Galera</h1>
+            <ul>
+              {
+                settings.external.map((quiz, index) => {
+                  const names = quiz.replace(/\//g, '').replace(/https:|.vercel.app/g, '').split('.');
+                  return (
+                    <li key={`quiz_${index}`}><QuizItem href={quiz} target="_blank">{names[1]}/{names[0]}</QuizItem></li>
+                  )
+                })
+              }
+            </ul>
+
           </Widget.Content>
         </Widget>
         <Footer />
