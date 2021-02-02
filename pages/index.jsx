@@ -2,8 +2,9 @@ import React from 'react';
 import Head from'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { storeData } from '../helper';
 import styled from 'styled-components';
-import settings from '../settings.json';
+import settings from '../db.json';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/QuizContainer';
 import QuizLogo from '../src/components/QuizLogo';
@@ -18,7 +19,9 @@ export default function Home() {
   const router = useRouter();
   const onSubmitHandler = (e) => { 
     e.preventDefault();
-    router.push(`/quiz?name=${name}`);
+    storeData({key: 'name', value: name});
+    storeData({type: 'local', key: 'name', value: name});
+    router.push('/quiz');
   }
   const isDisabled = () => name.length === 0;
 
@@ -74,7 +77,7 @@ export default function Home() {
                 settings.external.map((quiz, index) => {
                   const names = quiz.replace(/\//g, '').replace(/https:|.vercel.app/g, '').split('.');
                   return (
-                    <li key={`quiz_${index}`}><QuizItem href={quiz} target="_blank">{names[1]}/{names[0]}</QuizItem></li>
+                    <li key={`quiz_${index}`}><QuizItem href={`/quiz/${quiz.replace('https://','')}`} target="_blank">{names[1]}/{names[0]}</QuizItem></li>
                   )
                 })
               }

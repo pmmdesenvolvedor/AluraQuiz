@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import settings from '../../../settings.json';
+import settings from '../../../db.json';
 
 import Widget from '../Widget';
 import Button from '../Form/Button';

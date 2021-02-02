@@ -1,4 +1,4 @@
-import db from '../../settings.json';
+import db from '../../db.json';
 
 const Db = (req, res) => {
 

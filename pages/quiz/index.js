@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Head from'next/head';
 import { useRouter } from 'next/router';
-import settings from '../settings.json';
-import QuizBackground from '../src/components/QuizBackground';
-import QuizContainer from '../src/components/QuizContainer';
-import QuizLogo from '../src/components/QuizLogo';
-import QuestionWidget from '../src/components/QuestionWidget';
-import LoadingWidget from '../src/components/LoadingWidget';
-import ResultsWidget from '../src/components/ResultsWidget';
-import Footer from '../src/components/Footer';
-import GitHubCorner from '../src/components/GitHubCorner';
+import { getStoredData } from '../../helper';
+import settings from '../../db.json';
+import QuizBackground from '../../src/components/QuizBackground';
+import QuizContainer from '../../src/components/QuizContainer';
+import QuizLogo from '../../src/components/QuizLogo';
+import QuestionWidget from '../../src/components/QuestionWidget';
+import LoadingWidget from '../../src/components/LoadingWidget';
+import ResultsWidget from '../../src/components/ResultsWidget';
+import Footer from '../../src/components/Footer';
+import GitHubCorner from '../../src/components/GitHubCorner';
 
 const QuizPage = props => {
   const router = useRouter();
@@ -78,7 +79,7 @@ const QuizPage = props => {
   return (
     <QuizBackground backgroundImage={settings.bg}>
       <Head>
-        <title>Alura Quiz - Vamos Jogar</title>
+        <title>Alura Quiz - Vamos Jogar - { getStoredData({key: 'name'}) }</title>
       </Head>
       <QuizContainer>
         <QuizLogo />
